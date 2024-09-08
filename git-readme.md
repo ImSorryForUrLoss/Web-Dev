@@ -17,3 +17,7 @@ Command line client can be found here: [git-scm.com/downloads](https://git-scm.c
 Start with the tutorials on Github here: [docs.github.com/en](https://docs.github.com/en)
 
 For reference, or to dig into specific features, review the full book: [git-scm.com/book](https://git-scm.com/book)
+
+## Tutorials
+
+The site [git-scm.com/doc/ext](https://git-scm.com/doc/ext) has links to many books, tutorials, videos, and two full courses on git.
