@@ -12,6 +12,10 @@ We set up some skeleton code and started the first step of generating the filena
 
 Finished the utility.
 
-The use is prompted for the file name root, and the number of binary digits to use (e.g., 2 digits = generate 4 filenames).
+The user is prompted for the file name root, and the number of binary digits to use (e.g., 2 digits = generate 4 filenames).
 
 Based on the binary digits, different lines of the file are formatted with a "!" inserted.
+
+## 2024-09-06 Friday
+
+Utility added to Web-Dev as part of the portfolio.
