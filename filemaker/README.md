@@ -8,14 +8,18 @@ Calum is using a Minecraft mod. He needs to generate a bunch of files to use wit
 
 We set up some skeleton code and started the first step of generating the filenames.
 
+The main method prompts the user for inputs then calls fileGenLoop.
+
+The fileGenLoop method determines the number of files to create then iterates through each, calling fileFillLoop.
+
 ## 2024-09-02 Monday
 
-Finished the utility.
+Finished fileFillLoop and the utility.
 
 The user is prompted for the file name root, and the number of binary digits to use (e.g., 2 digits = generate 4 filenames).
 
-Based on the binary digits, different lines of the file are formatted with a "!" inserted.
+Based on the binary digits, each file is created and different lines of the file are formatted with a "!" inserted.
 
 ## 2024-09-06 Friday
 
-Utility added to Web-Dev as part of the portfolio.
+Utility added to Web-Dev as part of the portfolio. Added this readme on 9/8.
