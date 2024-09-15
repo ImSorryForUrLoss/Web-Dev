@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="scroll">
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+
+	<link rel="icon" type="image/x-icon" sizes="512x512" href="img/favicon512.ico">
+	<link rel="icon" type="image/x-icon" sizes="128x128" href="img/favicon128.ico">
+	<link rel="icon" type="image/x-icon" sizes="64x64" href="img/favicon64.ico">
+	<link rel="icon" type="image/x-icon" sizes="512x512" href="img/favicon512.png">
+	<link rel="icon" type="image/x-icon" sizes="64x64" href="img/favicon64.png">
+	
+
+	<title>Aegean</title>
+
+</head>
+
+
+<h1>
+	<div class="title">
+		<div class="noSel">
+			<div class="flowGrad" id="flowGrad">
+				AEGEAN
+			</div>
+		</div>
+	</div>
+</h1>
+
+<div>
+<nav class="nav" id="nav">
+	<div class="noSel" id="JSButtonHandler">
+
+			<button class="navButton" id="buttonCopy">Copy</button>
+
+			<button class="navButton" id="buttonOneClick">OneClick</button>
+
+			<button class="navButton" id="buttonMinecraft">Minecraft</button>
+
+			<button class="navButton" id="buttonCrafttweaker">Crafttweaker</button>
+
+	</div>
+</nav>
+
+	<!-- sidebar -->
+	<div>
+		<div class="sidebarContent" id="sidebarContent">
+			<h2>What is Aegean?</h2>
+			<p>Aegean is a website designed to help you save time by automating simple "everyday" tasks.</p><br>
+
+			<h2>How do I use Aegean?</h2>
+			<p>Each action Aegean can automate is orginized into boxes. all boxes have a button to perform the listed action. some boxes have additional inputs such as dropdown menus and text fields.</p><br>
+
+			<h2>Example Inputs</h2><br>
+
+			<label for="exampleDropdown">Select option:</label>
+				<select class="dropdownMenu" id="exampleDropdown" style="width: 96%;">
+					<option value="1" class="dropdownOption">Option One</option>
+					<option value="2" class="dropdownOption">Option Two</option>
+					<option value="3" class="dropdownOption">Option Three</option>
+				</select>
+
+			<br><br>
+
+			<textarea rows="1" class="inputBox" id="exampleTextarea" spellcheck="false">Input Text Here</textarea>
+
+			<br><br>
+
+			<div style="justify-content: right; display: flex;">
+				<div class="boxButton buttonCopy" style="text-align: right; user-select: none; padding: 5px 10px 5px 10px;" id="exampleButton">Click Me!</div>
+			</div>
+
+
+			<div class="sidebarButton" id="sidebarButton">
+				<img src="./img/about_button.png" width="80%" height="80%">
+			</div>
+			<!-- i hate everything about this -->
+			<div class="sidebarPadding">|</div>
+		</div>
+
+		<div class="sidebarBlur sidebarNoBlur" id="sidebarBlur">
+
+		</div>
+	</div>
+
+	<body class="body" style="min-height: 100vh;">
+		
+		<div class="QAOptions">
+			<div class="QAOptionsRows">
+
+				<!-- fireball crash -->
+				<div class="box copy oneClick minecraft crash grief">
+					<div class="boxHeader">
+						Fireball Crash
+						<div class="tooltip" onmouseover="moveTooltip(event)">
+							<img src="./img/info_button_smol_boi.png">
+							<div class="tooltiptext">
+								
+								WARNING: VERY HARD TO UNDO<br>DO NOT PLACE IN WORLDS YOU CARE ABOUT<br>spawn egg for a firecharge that has a power above the integer limit. placing instantly crashes the world.
+							</div>
+						</div>
+					</div>
+					NBT data for a fireball that crashes the world it is in<br>
+
+					<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<button class="boxButton buttonCopy" id="crashFireball">Copy to Clipboard</button>
+				</div>
+				
+				<!-- crafttweaker placeholder -->
+				<div class="box minecraft crafttweaker copy oneClick mod">
+					<div class="boxHeader">
+						Crafttweaker Placeholder Item
+						<div class="tooltip" onmouseover="moveTooltip(event)">
+							<img src="./img/info_button_smol_boi.png">
+							<div class="tooltiptext">
+								To setup:<br>replace all instances of x with the correct input. i need to add more detail to make this look better but I really dont know what to add. if you know how CT works it's easy.
+							</div>
+						</div>
+					</div>
+					A placeholder for changing a crafting recipe with crafttweaker
+
+					<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<button class="boxButton buttonCopy" id="ctPlaceholder">Copy to Clipboard</button>
+				</div>
+			
+				<!-- 1block pos swapper -->
+				<div class="box dropdown copy">
+					<div class="boxHeader">
+						1 Block Position Swapper
+						<div class="tooltip" onmouseover="moveTooltip(event)">
+							<img src="./img/info_button_smol_boi.png">
+							<div class="tooltiptext">
+								Generates a one block command to swap between two positions.<br> You have the option to choose the activation method for the swapper or to just add one manually.
+							</div>
+						</div>
+					</div>
+					Allows you to quickly swap between two positions
+
+					<p class="small"><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<label for="oneBlockSwapDropdown">Select activation method:</label>
+						<select class="dropdownMenu" onchange="oneBlockSwapDropdownHandler()" id="oneBlockSwapDropdown">
+							<option value="CoaS" class="dropdownOption">Carrot on a Stick</option>
+							<option value="WFoaS" class="dropdownOption">Warped Fungus on a Stick</option>
+							<option value="customEntity" class="dropdownOption">Custom Entity</option>
+						</select>
+
+					<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<div id="posSwapinputVis">
+						Entity Parameters:
+						<p class="small"><br></p>
+						<textarea rows="1" cols="50" class="inputBox" id="posSwapinput" spellcheck="false">@e[type=minecraft:example,limit=1]</textarea>
+						<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+					</div>
+
+					<button class="boxButton buttonCopy" id="1blockPosSwapper">Copy to Clipboard</button>
+				</div>
+
+				<!-- quick command in a bottle -->
+				<div class="box dropdown copy">
+					<div class="boxHeader">
+						Quick Command-in-a-Bottle
+						<div class="tooltip" onmouseover="moveTooltip(event)">
+							<img src="./img/info_button_smol_boi.png">
+							<div class="tooltiptext">
+								Generates a enderman spawn egg that places a powered command block on click.<br>the command block will contain the inputted command.
+							</div>
+						</div>
+					</div>
+					Makes a spawn egg to run a command on place
+
+					<p class="small"><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<textarea rows="1" class="inputBox" id="quickCommandinput" spellcheck="false">Command to run</textarea>
+
+					<p class="small"><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<button class="boxButton buttonCopy" id="quickInstantCommand">Copy to Clipboard</button>
+				</div>
+
+				<!-- 1 block command toggle -->
+				<div class="box dropdown copy textbox">
+					<div class="boxHeader">
+						1 Block Command Swapper
+						<div class="tooltip"  onmouseover="moveTooltip(event)">
+							<img src="./img/info_button_smol_boi.png">
+							<div class="tooltiptext">
+								Generates a one block command to toggle between two commands.<br> You have the option to choose the activation method for the swapper or to just add one manually.
+							</div>
+						</div>
+					</div>
+					Toggle between the two inputted commands
+
+					<p class="small"><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<textarea rows="1" class="inputBox" id="cmdToggleTextarea1" spellcheck="false">Command 1</textarea>
+					<br><br>
+					<textarea rows="1" class="inputBox" id="cmdToggleTextarea2" spellcheck="false">Command 2</textarea>
+
+					<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+
+					<label for="oneBlockToggleDropdown">Select activation method:</label>
+						<select class="dropdownMenu" onchange="oneBlockToggleDropdownHandler()" id="oneBlockToggleDropdown">
+							<option value="CoaS" class="dropdownOption">Carrot on a Stick</option>
+							<option value="WFoaS" class="dropdownOption">Warped Fungus on a Stick</option>
+							<option value="customEntity" class="dropdownOption">Custom Entity</option>
+						</select>
+					
+						<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+					
+						<div id="commandToggleinputVis">
+							Entity Parameters:
+							<p class="small"><br></p>
+							<textarea rows="1" cols="50" class="inputBox" id="commandToggleinput" spellcheck="false">@e[type=minecraft:example,limit=1]</textarea>
+							<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+						</div>
+
+					<button class="boxButton buttonCopy" id="1blockCommandToggle">Copy to Clipboard</button>
+				</div>
+			</div>
+			
+			<div class="QAOptionsRows">
+
+				<!-- tech mc server invite links -->
+				<div class="box oneClick minecraft">
+					<div class="boxHeader">
+						MC Server Invite Links
+						<div class="tooltip" onmouseover="moveTooltip(event)">
+							<img src="./img/info_button_smol_boi.png">
+							<div class="tooltiptext">
+								Let's you select a Technical Minecraft Discord Server and get a invite link to it.
+							</div>
+						</div>
+					</div>
+					Let's you select a Technical Discord Server invite<br>
+
+					<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<label for="MCInviteDropdown">Select activation method:</label>
+						<select class="dropdownMenu" onchange="MCInviteDropdownHandler()" id="MCInviteDropdown">
+							<option value="cartchives" class="dropdownOption">Cartchives</option>
+							<option value="storageTech" class="dropdownOption">Storage Tech</option>
+							<option value="tntArchive" class="dropdownOption">TNT Archives</option>
+						</select>
+
+					<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<button class="boxButton buttonLink" id="techDCInvite">Open link in new tab</button>
+
+				</div>
+
+				<div class="box minecraft oneClick">
+					<div class="boxHeader">
+						Void World++
+						<div class="tooltip" onmouseover="moveTooltip(event)">
+							<img src="./img/info_button_smol_boi.png">
+							<div class="tooltiptext">
+								The world will contain a void world and the ability to toggle some commands and includes carpet functionallity (e.g. a toggle creativeNoClip carrot on a stick).
+							</div>
+						</div>
+					</div>
+
+					A void world with a some of build in custom functionallity
+
+					<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<a href="./download/voidWorld.zip" download="void_world.zip" class="boxButton buttonFile">Download File</a>
+				</div>
+
+				<div class="box minecraft oneclick">
+					<div class="boxHeader">
+						Escape Room Template
+						<div class="tooltip" onmouseover="moveTooltip(event)">
+							<img src="./img/info_button_smol_boi.png">
+							<div class="tooltiptext">
+								The template will contain a pre-made starter room and a reset, checkpoint, undo, item drop RNG manipulation, and freecam command you can run.
+							</div>
+						</div>
+					</div>
+
+					A template for a Minecraft escape room with a built-in QOL commands
+
+					<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<a href="./download/escapeRoom.zip" download="escape_room_template.zip" class="boxButton buttonFile">Download File</a>
+				</div>
+
+				<!-- useful 1block toggles -->
+				<div class="box copy">
+					<div class="boxHeader">
+						Useful One Block Toggles
+						<div class="tooltip" onmouseover="moveTooltip(event)">
+							<img src="./img/info_button_smol_boi.png">
+							<div class="tooltiptext">
+								Lets you select a one block command to copy to clipboard.<br> You have the option to choose the activation method for the command or to just add one manually.
+							</div>
+						</div>
+					</div>
+					Lets you select different one block commands to use
+
+					<p class="small"><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<label for="useful1BlockActivationDropdown">Select activation method:</label>
+						<select class="dropdownMenu" onchange="usefulOneBlockDropdownHandler()" id="useful1BlockActivationDropdown">
+							<option value="CoaS" class="dropdownOption">Carrot on a Stick</option>
+							<option value="WFoaS" class="dropdownOption">Warped Fungus on a Stick</option>
+							<option value="customEntity" class="dropdownOption">Custom Entity</option>
+						</select>
+
+					<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+				
+					<div id="useful1BlockinputVis">
+						Entity Parameters:
+						<p class="small"><br></p>
+						<textarea rows="1" cols="50" class="inputBox" id="usefulToggleinput" spellcheck="false">@e[type=minecraft:example,limit=1]</textarea>
+						<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+					</div>
+				
+					<select class="dropdownMenu" id="useful1BlockOptionDropdown">
+						<option value="1" class="dropdownOption">One</option>
+						<option value="2" class="dropdownOption">Two</option>
+						<option value="3" class="dropdownOption">Three</option>
+					</select>
+				
+					<p class="small"><br><br></p><p class="line">-</p><p class="small"><br><br></p>
+
+					<button class="boxButton buttonCopy" id="useful1BlockToggle">Copy to Clipboard</button>
+				</div>
+			</div>
+
+			<!-- new button: prep text for inputting -->
+			
+		</div>
+
+	</body>
+
+<div id="popupCopy" class="popup">
+	Copied to Clipboard!
+</div>
+
+<div id="popupLink" class="popup">
+	Link Opened in New Tab!
+</div>
+
+<div id="popupFile" class="popup">
+	Download Started!
+</div>
+
+<script src="./script.js"></script>
+
+</html>

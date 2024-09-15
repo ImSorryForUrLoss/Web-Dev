@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Nunito:wght@300;400;500;700&family=Pacifico&family=Poiret+One&family=Sono:wght@200;300;400;500&display=swap');
+
+:root {
+
+	--changing1: rgb(141, 141, 141);
+	--changing2: rgb(0, 0, 0);
+	--boxWidth:	value(200);
+
+} /* End root */
+
+* {
+	margin: 0;
+	padding: 0;
+} /* End * */
+
+.title {
+
+	text-align: center;
+	font-family: Nunito;
+	font-weight: 500;
+	font-size: 128px;
+	background-image: linear-gradient(180deg, #00a8f3, #7bc8c8);
+
+} /* End title */
+
+.noSel {
+
+	user-select: none;
+
+} /* End noSel */
+
+.flowGrad {
+
+	background-image: linear-gradient(65deg, var(--changing1), var(--changing2));
+	background-size: 100%;
+	background-repeat: repeat;
+
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color:transparent;
+	-moz-background-clip:text;
+	-moz-text-fill-color:transparent;
+
+} /* End flowGrad */
+
+.boxHeader {
+	font-size: 30px;
+	font-family: concert one;
+	font-weight: bold;
+}
+
+.box {
+	background: #aaf2; 
+	border: 0.5vw solid #00000001;
+	font-size: 20px;
+	font-family: Poiret One;
+	font-weight: bolder;
+	border-radius: 25px;
+	display: inline-block;
+	transition: ease 0.3s;
+	user-select: none;
+	margin: 3px;
+	padding: 5px;
+	width: 98%;
+	flex: 20%;
+}
+
+.nav{
+	text-align: center;
+	background-color: #ffffff;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+}
+
+.navButton {
+	position: relative;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px solid #000;
+	padding-left: 3px;
+	padding-right: 3px;
+	background-color: #fff;
+	cursor: pointer;
+	font-family: Sono;
+}
+
+.navButton::before {
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 4px;
+	bottom: -4px;
+	left: 50%;
+	background-color: #000;
+	transition: width 0.3s ease-out, left 0.3s ease-out;
+}
+
+.navButton:hover::before {
+	width: 100%;
+	left: 0;
+}
+
+.body {
+	background-image: linear-gradient(180deg, #1155ee, #3399bb);
+}
+
+.QAOptionsRows {
+	display: flex;
+	flex-wrap:nowrap;
+}
+
+.navButton {
+	border-right: #fff;
+	border-top: #fff;
+	border-left: #fff;
+	border-width: 4px;
+}
+
+.navButtonOff {
+	border-color: #fff;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #09f8;
+    color: #000;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 125%;
+    left: -143.5px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-family: Nunito;
+    font-size: 14px;
+    text-align: center;
+    width:300px;
+	backdrop-filter: blur(5px);
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 150px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #09f8 transparent transparent transparent;
+	backdrop-filter: blur(5px);
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltiptext {
+	z-index: 3;
+	padding: 5px;
+}
+
+.boxButton {
+	background-color: #77f8;
+	border-radius: 8px;
+	text-align: center;
+	transition: all 0.3s;
+	padding: 5px;
+	border-color: #0000;
+	font-size: 20px;
+	font-family: Sono;
+	font-weight: 600;
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.boxButton:hover {
+	background-color: #aaf4;
+	border-radius: 5px;
+	color: #227;
+}
+
+.popup {
+    position: fixed;
+    bottom: -25%;
+    left: 45%;
+    background-color: #00a8f3;
+    transition: bottom 0.3s ease;
+	padding: 12px;
+	border-radius: 8px;
+	font-family: Pacifico;
+  }
+  
+.popup.show {
+    bottom: 50px;
+  }
+
+.inputBox {
+	resize:none;
+	background-color: #02cf;
+	border-color: #0000;
+	font-family: Sono;
+	padding: 3px;
+	width: 96%;
+	color: #fff;
+}
+
+.dropdownMenu {
+	background-color: #03a9f4aa;
+	border:1px solid #03a9f4aa;
+	width: 100%;
+	font-family: Sono;
+	cursor: pointer;
+}
+
+.dropdownOption .dropdownMenu {
+	border-radius: 0px;
+}
+
+#posSwapinputVis {
+	display: none;
+}
+
+#commandToggleinputVis {
+	display: none;
+}
+
+.line {
+	font-size: 1px;
+	background-color: #000;
+}
+
+.small {
+	font-size: 5px;
+}
+
+option {
+	font-family: Courier New;
+}
+
+.scroll {
+	overflow-y:scroll;
+	scrollbar-color: #04c #26f;
+	overflow-x: hidden;
+}
+
+.sidebarButton {
+	position: absolute;
+	text-align: left;
+	left: -10%;
+	width: 10%;
+	height: 4vw;
+	top: 0px;
+	background-color: rgb(134, 186, 255);
+	padding-right: 5px;
+	border-radius: 5px 0px 0px 5px;
+	font-family: Sono;
+	transition: ease, 0.3s;
+	z-index: 100;
+	user-select: none;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	cursor: pointer;
+}
+
+.sidebarContent {
+	position: fixed;
+	text-align: right;
+	right: -40%;
+	top: 0px;
+	height: 99vh;
+	background-color: rgb(134, 186, 255);
+	padding-top: 1vh;
+	border-radius: 5px 0px 0px 5px;
+	font-family: Sono;
+	z-index: 101;
+	width: 40%;
+	transition: ease, 0.3s;
+}
+
+.sidebarLeft {
+	position: fixed;
+	right: 10px; 
+	transition: ease 0.3s;
+}
+
+.sidebarPadding {
+	position: absolute;
+	top: 0;
+	right: -10px;
+	background-color: rgb(134, 186, 255);
+	width: 10px;
+	height: 100%;
+	color: #0000;
+	user-select: none;
+}
+
+.sidebarBlur {
+	background-color: #0268;
+	backdrop-filter: blur(3px);
+	width: 100vw;
+	height: 100vh;
+	z-index: 99;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: ease 0.3s;
+}
+
+.sidebarNoBlur {
+	background-color: #0000;
+	backdrop-filter: blur(0px);
+	z-index: -1;
+}
