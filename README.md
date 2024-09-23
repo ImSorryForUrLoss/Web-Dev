@@ -18,3 +18,11 @@ code for the web development class
 * Created conda env
 * Testing from cmd line
 * Created web_scraper v1 and 2 from the web scraping tutorial
+
+## 2024-09-22 Sunday - Discuss project ideas
+* Review semester project ideas
+  * Something for Magic the Gathering
+  * Bulk card data download available from scryfall.com
+  * Deck builder and search available from archidekt.com
+  * Scryfall also provides an API to query from your own website
+* Started project plan document with problem statement and user motivation
