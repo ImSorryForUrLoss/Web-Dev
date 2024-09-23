@@ -3,3 +3,13 @@ Guide to MarkDown syntax:
 [https://www.markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/)
 
 [https://www.markdownguide.org/extended-syntax](https://www.markdownguide.org/extended-syntax)
+
+Setting Up the Conda Environment
+
+conda create -n web_scraper python
+conda activate web_scraper
+pip install requests
+pip install html5lib
+pip install bs4
+
+Use "conda deactivate" and then "conda env remove -n web_scraper" to start over.
