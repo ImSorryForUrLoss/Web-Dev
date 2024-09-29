@@ -1,4 +1,4 @@
-# Requirments:
+# Reqs:
 
 * Must include design plans
 * Must have a clear purpose and clear "customer"
