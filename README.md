@@ -26,3 +26,10 @@ code for the web development class
   * Deck builder and search available from archidekt.com
   * Scryfall also provides an API to query from your own website
 * Started project plan document with problem statement and user motivation
+
+## 2024-09-29 Sunday - Mature Awsome Final Project
+* Discussed v1 demo
+* Decomposed into features
+* Selected two features for sprint number 1
+* Named project "surveil descend" as omage to skryfall
+* Created initial files: main html file and changelog file
