@@ -42,5 +42,5 @@ v3: the user will be able to enter a scryfall search to fetch results
 
 # Sprint 1
 
-1. Feature 1: Blank page
+1. Feature 1: Blank page CHECK
 1. Feature 2: Grid of cards with one card on row two
