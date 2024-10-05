@@ -1,5 +1,8 @@
 # Changelog
 
+## 10/5/2024
+https://www.samdawson.dev/article/auto-flow-dense-varying-image-sizes/
+
 ## 9/29/2024
 Added changelog
 
