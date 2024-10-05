@@ -33,3 +33,6 @@ code for the web development class
 * Selected two features for sprint number 1
 * Named project "surveil descend" as omage to skryfall
 * Created initial files: main html file and changelog file
+
+## 2024-10-05 Saturday - Work on features
+* Research how to display a dynamic grid of cards
