@@ -39,7 +39,7 @@ body {
     background-color: #f0f0f0;
 }
 
-.grid-container {
+.gridContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;

@@ -1,7 +1,7 @@
 # Changelog
 
 ## 10/5/2024
-https://www.samdawson.dev/article/auto-flow-dense-varying-image-sizes/
+Added a large grid of a hard to read cards
 
 ## 9/29/2024
 Added changelog
