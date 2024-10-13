@@ -23,7 +23,7 @@ Upon visiting this website, the user must do the following:
 
 v1: the user will be presented with checkboxes that can be used to filter down a list of cards
 
-v2: the user will be able to sort results
+v2: the user will be able to sort results, and support for double sided cards
 
 v3: the user will be able to enter a scryfall search to fetch results
 
@@ -43,4 +43,11 @@ v3: the user will be able to enter a scryfall search to fetch results
 # Sprint 1
 
 1. Feature 1: Blank page CHECK
-1. Feature 2: Grid of cards with one card on row two
+1. Feature 2: Grid of cards with one card on row two CHECK
+
+# Sprint 2
+
+1. List of cards
+1. Display list of cards
+1. Make checkboxes
+1. Filter list based off of checkboxes
