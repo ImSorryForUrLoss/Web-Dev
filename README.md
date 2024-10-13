@@ -36,3 +36,18 @@ code for the web development class
 
 ## 2024-10-05 Saturday - Work on features
 * Research how to display a dynamic grid of cards
+* Display a dynamic grid of cards
+
+## 2024-10-13 Sunday - Start Sprint 2
+* Discuss features for Sprint 2
+* Identify features for Sprint 2 and sequence them
+* Added feature to v2 as future challenge
+* Downloaded small set of card images to support Sprint 2 features
+* Using oracle_id to uniquely identify cards
+* scryfall_uri combines set and collector_number in a URL
+* The oracle_id is unique to scryfall
+* Magic site uses set and collector_number (and card name)
+* Added feature to backlog - a utility that scans each list of cards ensuring the corresponding image is in the cimg directory and downloading if not
+* Using size normal (98k) instead of size large (149k) for images
+* The card "Plains" has one oracle_id but 74 printings - handle in future version
+* Use the Oracle Cards download for now, e.g., https://data.scryfall.io/oracle-cards/oracle-cards-20241013090207.json
