@@ -13,16 +13,20 @@ const guids = [
 ];
 
 // Getting the container to display the GUIDs
-const container = document.getElementById('cardholder');
+const holder = document.getElementById('cardholder');
+const list = document.getElementById('cardlist');
 
 // Displaying each GUID in the container
 guids.forEach(guid => {
     // const p = document.createElement('p');
     p = "./cimg/" + guid + ".jpg";
-    document.create
+    // document.create
     const img = document.createElement('img')
+    const div = document.createElement('div')
     img.src = p
+    div.textContent = guid
     // img.class = 'card'
     img.className = 'card'
-    container.appendChild(img);
+    holder.appendChild(img);
+    list.appendChild(div);
 });

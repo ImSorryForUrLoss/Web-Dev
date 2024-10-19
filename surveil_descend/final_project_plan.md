@@ -10,7 +10,7 @@
 
 Users visit this website when trying to get a better, easier to work with way to search for Magic: the Gathering cards.
 
-Currently, users have no way of searching through results of Scryfall searches. They also must input a large amount of parameters when trying to perform simple tasks like excluding cards result in illegal cards.
+Currently, users have no way of searching through results of Scryfall searches. They also must input a large amount of parameters when trying to perform simple tasks like excluding cards that result in illegal cards.
 
 Upon visiting this website, the user must do the following:
 
@@ -23,7 +23,7 @@ Upon visiting this website, the user must do the following:
 
 v1: the user will be presented with checkboxes that can be used to filter down a list of cards
 
-v2: the user will be able to sort results, and support for double sided cards
+v2: the user will be able to sort results, support for double sided cards, and access to a full list of cards
 
 v3: the user will be able to enter a scryfall search to fetch results
 
@@ -47,7 +47,14 @@ v3: the user will be able to enter a scryfall search to fetch results
 
 # Sprint 2
 
-1. List of cards
-1. Display list of cards
+1. List of cards CHECK
+1. Display list of cards CHECK
+
+# Sprint 3
+
 1. Make checkboxes
 1. Filter list based off of checkboxes
+
+# Greasemonkey Eval
+
+I have communed with my ancestors and they have granted me insight on how to use Greasemonkey (I watched a video on Greasemonkey (https://www.youtube.com/watch?v=6DmQ_V9ZRlk)). I have come to the conclusion that while Greasemonkey seems very helpful, adding/removing large quantities of features could get very cumbersome. Thus I have drawn the conclusion that it would be faster,easier, and simpler to just create my own website and use Scryfall's API rather then try and turn Scryfall into Surveil Decend.
