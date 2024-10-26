@@ -51,3 +51,6 @@ code for the web development class
 * Using size normal (98k) instead of size large (149k) for images
 * The card "Plains" has one oracle_id but 74 printings - handle in future version
 * Use the Oracle Cards download for now, e.g., https://data.scryfall.io/oracle-cards/oracle-cards-20241013090207.json
+
+## 2024-10-19 Saturday - Create Personas
+* Calum has Persona homework. He is to create at least 2 personas for the users of his ScryFall enriched site-- including at least 1 type of user who is not so computer savvy. 
