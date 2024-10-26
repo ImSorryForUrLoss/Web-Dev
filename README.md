@@ -54,3 +54,7 @@ code for the web development class
 
 ## 2024-10-19 Saturday - Create Personas
 * Calum has Persona homework. He is to create at least 2 personas for the users of his ScryFall enriched site-- including at least 1 type of user who is not so computer savvy. 
+
+## 2024-10-26 Saturday
+* Create checkbox for filtering cards (still need to connect to something)
+* Draw layout for website (2 page views)
