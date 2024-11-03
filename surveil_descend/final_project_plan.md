@@ -53,7 +53,8 @@ v3: the user will be able to enter a scryfall search to fetch results
 # Sprint 3
 
 1. Make checkboxes
-1. Filter list based off of checkboxes
+1. Filter list based off of checkbox by filtering on last char of GUID
+1. Filter list based of off card info in full card list
 
 # Greasemonkey Eval
 

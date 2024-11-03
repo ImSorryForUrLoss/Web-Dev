@@ -15,18 +15,85 @@ const guids = [
 // Getting the container to display the GUIDs
 const holder = document.getElementById('cardholder');
 const list = document.getElementById('cardlist');
+allToggle = document.getElementById('allToggle')
+guidCheck = document.getElementById('guidCheck')
+cState = 0
+
+// Force all checkboxes off
+allToggle.checked = 0
+guidCheck.checked = 0
 
 // Displaying each GUID in the container
-guids.forEach(guid => {
-    // const p = document.createElement('p');
-    p = "./cimg/" + guid + ".jpg";
-    // document.create
-    const img = document.createElement('img')
-    const div = document.createElement('div')
-    img.src = p
-    div.textContent = guid
-    // img.class = 'card'
-    img.className = 'card'
-    holder.appendChild(img);
-    list.appendChild(div);
-});
+function addCards() {
+    guids.forEach(guid => {
+        p = "./cimg/" + guid + ".jpg";
+        const img = document.createElement('img')
+        const div = document.createElement('div')
+        img.src = p
+        div.textContent = guid
+        img.className = 'card'
+        holder.appendChild(img);
+        list.appendChild(div);
+    });
+    
+}
+
+addCards()
+const listLen = list.children.length
+
+list.removeChild(list.firstChild)
+holder.removeChild(holder.firstChild)
+
+allToggle.addEventListener('change', function() {
+
+    if (cState === 0) {
+        while(holder.hasChildNodes()) {
+            holder.removeChild(holder.firstChild)
+            list.removeChild(list.lastChild)
+        }
+        cState = 1
+    } else {
+        addCards()
+
+        cState = 0
+    }
+
+})
+
+guidCheck.addEventListener('change', function() {
+
+    if (cState === 0) {
+
+        for (let i = 0; i < listLen; i++) {
+            firstBorn = list.firstChild.textContent
+            lastChar = firstBorn.charAt(firstBorn.length - 1)
+            console.log(lastChar)
+            if (lastChar == 9) {
+                console.log(i + " num")
+                const keep = document.createElement('div')
+                const keepImg = document.createElement('img')
+
+                keep.textContent = list.children[0].textContent
+                keepImg.src = "./cimg/" + keep.textContent + ".jpg"
+                keepImg.className = 'card'
+
+                list.appendChild(keep)
+                holder.appendChild(keepImg)
+
+                list.removeChild(list.firstChild)
+                holder.removeChild(holder.firstChild)
+            } else {
+                list.removeChild(list.firstChild)
+                holder.removeChild(holder.firstChild)
+            }
+
+        }
+
+        cState = 1
+    } else {
+        addCards()
+
+        cState = 0
+    }
+
+})
