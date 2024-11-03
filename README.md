@@ -58,3 +58,8 @@ code for the web development class
 ## 2024-10-26 Saturday
 * Create checkbox for filtering cards (still need to connect to something)
 * Draw layout for website (2 page views)
+
+## 2024-11-03 Sunday
+* Still no feedback on the website layouts
+* Work on checkboxes
+  * Filter on last character in GUID
