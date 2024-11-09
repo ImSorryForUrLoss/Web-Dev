@@ -41,6 +41,7 @@ function addCards() {
 addCards()
 const listLen = list.children.length
 
+// remove invisible firstborn child
 list.removeChild(list.firstChild)
 holder.removeChild(holder.firstChild)
 
@@ -67,9 +68,7 @@ guidCheck.addEventListener('change', function() {
         for (let i = 0; i < listLen; i++) {
             firstBorn = list.firstChild.textContent
             lastChar = firstBorn.charAt(firstBorn.length - 1)
-            console.log(lastChar)
             if (lastChar == 9) {
-                console.log(i + " num")
                 const keep = document.createElement('div')
                 const keepImg = document.createElement('img')
 
@@ -91,6 +90,12 @@ guidCheck.addEventListener('change', function() {
 
         cState = 1
     } else {
+
+        while(holder.hasChildNodes()) {
+            holder.removeChild(holder.firstChild)
+            list.removeChild(list.lastChild)
+        }
+
         addCards()
 
         cState = 0
