@@ -63,3 +63,8 @@ code for the web development class
 * Still no feedback on the website layouts
 * Work on checkboxes
   * Filter on last character in GUID
+
+## 2024-11-09 Saturday
+* Figuring out Git
+* Figuring out how to download images from scryfall website without getting rate limited or banned
+* Started working on a script to download all images to hard drive
