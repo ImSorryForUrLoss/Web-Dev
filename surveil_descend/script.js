@@ -17,7 +17,8 @@ const holder = document.getElementById('cardholder');
 const list = document.getElementById('cardlist');
 allToggle = document.getElementById('allToggle')
 guidCheck = document.getElementById('guidCheck')
-cState = 0
+allToggleState = 0
+guidCheckState = 0
 
 // Force all checkboxes off
 allToggle.checked = 0
@@ -45,25 +46,27 @@ const listLen = list.children.length
 list.removeChild(list.firstChild)
 holder.removeChild(holder.firstChild)
 
+// Code for toggling all cards
 allToggle.addEventListener('change', function() {
 
-    if (cState === 0) {
+    if (allToggleState === 0) {
         while(holder.hasChildNodes()) {
             holder.removeChild(holder.firstChild)
             list.removeChild(list.lastChild)
         }
-        cState = 1
+        allToggleState = 1
     } else {
         addCards()
 
-        cState = 0
+        allToggleState = 0
     }
 
 })
 
+// Code for toggling all cards with last UUID char 9
 guidCheck.addEventListener('change', function() {
 
-    if (cState === 0) {
+    if (guidCheckState === 0) {
 
         for (let i = 0; i < listLen; i++) {
             firstBorn = list.firstChild.textContent
@@ -88,7 +91,7 @@ guidCheck.addEventListener('change', function() {
 
         }
 
-        cState = 1
+        guidCheckState = 1
     } else {
 
         while(holder.hasChildNodes()) {
@@ -98,7 +101,7 @@ guidCheck.addEventListener('change', function() {
 
         addCards()
 
-        cState = 0
+        guidCheckState = 0
     }
 
 })
