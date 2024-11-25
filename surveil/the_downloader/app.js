@@ -30,9 +30,6 @@ async function startDownloading() {
 		} 
 	}
 
-	// const cardImages = data.map(card => card.image_uris ? card.image_uris.art_crop : null).filter(url => url !== null);
-	// const cardId = data.map(card => card.oracle_id ? card.oracle_id : null);
-
 	// Start downloading cards one per second
 
 	let index1 = 0
@@ -59,7 +56,10 @@ async function startDownloading() {
 		index1++
 	}
 
-	// console.log(downloadQueue)
+	console.log(downloadQueue.length)
+	console.log(downloadQueue)
+
+	// return
 
 	let index = 0;
 	const interval = setInterval(() => {
