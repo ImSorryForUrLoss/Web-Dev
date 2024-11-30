@@ -68,3 +68,14 @@ code for the web development class
 * Figuring out Git
 * Figuring out how to download images from scryfall website without getting rate limited or banned
 * Started working on a script to download all images to hard drive
+
+## 2024-11-30 Saturday
+* Did not log prior November sessions
+* Completed a utility to download card images
+* Most card images are downloaded, but some may be missing
+* Utility is in the_downloader folder
+* Today, created short script in the_cardfinder
+* Script uses scryfall search API
+* Parse results and get first 10 card GUIDs
+* Integrate into main code to display cards
+* Change checkbox search functionality
