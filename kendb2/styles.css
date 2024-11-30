@@ -1,0 +1,69 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.main {
+	background-color: #444;
+}
+
+.title {
+	font-size: 40px;
+	text-align: center;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	user-select: none;
+}
+
+.mapHolder {
+	display: flex;
+	margin: 5px;
+}
+
+.map {
+	background-color: #222;
+	font-family: monospace;
+	font-size: 20px;
+	color: #fff;
+	border-radius: 10px;
+	padding: 5px;
+	margin: 4px;
+	display:inline-block;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+.mapName {
+	font-size: 30px;
+}
+
+.mapId {
+	color: #9af;
+	text-align: right;
+}
+
+.mapAuth {
+	color: #aaa;
+}
+
+.mapDiffSlider {
+	background: linear-gradient(90deg,
+	#92E050 0%,
+	#F5D500 40%,
+	#FFAA00 61%,
+	#ff0000 100%
+	);
+	width: 100%;
+	height: 7px;
+	border-radius: 10px;
+	margin: 7px 0px 7px 0px;
+}
+
+.mapDiffVal {
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	border-radius: 25%;
+	bottom:10px;
+	/* position: absolute; */
+	/* align-items: baseline; */
+}

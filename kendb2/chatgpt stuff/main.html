@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items:baseline;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background-color: #333;
+      padding: 15px;
+      border-radius: 8px;
+      width: 250px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    }
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .id {
+      font-size: 12px;
+      color: #888;
+    }
+    .author {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #aaa;
+    }
+    .progress-bar {
+      background-color: #222;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 8px 0;
+      position: relative;
+    }
+    .progress {
+      height: 100%;
+      width: 90%; /* Adjust this percentage to control the progress */
+      background: linear-gradient(to right, #a3d977, #f7b32b, #d9534f);
+      border-radius: 4px;
+    }
+    .score {
+      position: absolute;
+      right: 0;
+      top: -20px;
+      background-color: #d9534f;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="title">THE ROOM</div>
+    <div class="id">#0001</div>
+    <div class="author">By ImSorry4YourLoss (1297)</div>
+    <div class="progress-bar">
+      <div class="progress"></div>
+      <div class="score">9</div>
+    </div>
+  </div>
+</body>
+</html>
