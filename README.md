@@ -79,3 +79,10 @@ code for the web development class
 * Parse results and get first 10 card GUIDs
 * Integrate into main code to display cards
 * Change checkbox search functionality
+
+## 2024-12-13 Friday
+* Scryfall search is hard coded - first n white cards with mana=1
+* Added search button
+* Determined images for double sided cards had not been downloaded
+* Revisited downloader, modified to download card images instead of art crop images
+* Need to finish debugging downloader and then run
