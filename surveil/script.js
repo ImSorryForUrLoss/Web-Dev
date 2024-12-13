@@ -6,6 +6,7 @@ const holder = document.getElementById('cardholder');
 const list = document.getElementById('cardlist');
 allToggle = document.getElementById('allToggle')
 guidCheck = document.getElementById('guidCheck')
+search_button = document.getElementById('the_button')
 
 // document.getElementById('the_button').addEventListener('click', startFinding);
 search = document.getElementById('search')
@@ -22,15 +23,20 @@ async function startFinding() {
 	document.getElementById('the_button').disabled = true;
 
 	text = search.value
-    // data = "https://api.scryfall.com/cards/search?" + text
-    url = "https://api.scryfall.com/cards/search?q=c%3Awhite+mv%3D1"
-    const dataResponse = await fetch(url)
+    // console.log(text)
+    // text = text.replace(/=/g, '%3D');
+    text = text.replace(/ /g, '+');
+    console.log(text)
+    data = "https://api.scryfall.com/cards/search?q=" + text
+    console.log(data)
+    // url = "https://api.scryfall.com/cards/search?q=c%3Dwhite+mv%3D1"
+    const dataResponse = await fetch(data)
     const dataJson = await dataResponse.json();			
 
-    // console.log(dataJson)
+    console.log(dataJson)
 
     index = 0
-    while (index < 10) {
+    while (index < 20) {
         curCard = dataJson.data[index]
         orc_id = curCard.oracle_id
         guids.push(orc_id)
@@ -38,7 +44,11 @@ async function startFinding() {
     }
 }
 
-startFinding()
+search_button.addEventListener('click', async function() {
+    await startFinding()
+    addCards()
+    console.log("t")
+})
 
 // console.log(guids)
 

@@ -11,9 +11,29 @@ async function startDownloading() {
 	let response = await fetch(url);
 	let data = await response.json();
 
-	async function fetchCardImage(cardName, index) {
+	console.log("data fetched")
+
+	multiverse_ids = data[5].multiverse_ids.length
+
+	// download the single sided card NO NOT CHANGE
+	async function downloadOneSide(cardName, index) {
 		try {
-				const imageResponse = await fetch(data[index].image_uris.art_crop);
+				const imageResponse = await fetch(data[index].image_uris.normal);
+				const imageBlob = await imageResponse.blob();			
+				const imageObjectURL = URL.createObjectURL(imageBlob);
+
+				a.href = imageObjectURL;
+				a.download = data[index].oracle_id;
+				a.click();
+		} catch (error) {
+		  console.log('Error:', error);
+		  console.log(cardName + " " + index)
+		} 
+	}
+
+	async function downloadTwoSide(cardName, index) {
+		try {
+				const imageResponse = await fetch(data[index].card_faces[0].image_uris.normal);
 				const imageBlob = await imageResponse.blob();			
 				const imageObjectURL = URL.createObjectURL(imageBlob);
 				// console.log(data[index].oracle_id)
@@ -32,57 +52,63 @@ async function startDownloading() {
 
 	// Start downloading cards one per second
 
-	let index1 = 0
+	let index1 = 1100
 
-	downloadCount = 33623
+	downloadCount = 1120
 
 	while (index1 < downloadCount) {
 		if (index1 % 100 === 0) {
-			console.log(index1)
+			console.log("checkpoint reached after " + index1 + " checks")
 		}
-		let type_line = data[index1].type_line
-		if (type_line == "Card // Card") {console.log(type_line)} 
+		let multiverse_ids = data[index1].multiverse_ids.length
+		if (multiverse_ids == 0) {console.log("TOKEN SPOTTED")} 
 		else {
 			try {
+				console.log("curr index val:" + index1)
 				const response = await fetch("./cimg/" + data[index1].oracle_id + ".jpg");
 				if (response.ok) {} 
 				else {
 					downloadQueue.push(index1)
+					console.log("FOUND YOU!")
 				}
 			} catch (error){
 				console.log(error)
 			}
-		} 
+		}
 		index1++
 	}
+
+	console.log("downloadqueue made")
 
 	console.log(downloadQueue.length)
 	console.log(downloadQueue)
 
 	// return
 
-	let index = 0;
+	let index = 1100;
 	const interval = setInterval(() => {
-		// for (let index in downloadQueue) {
-		// 	cardName = "./cimg/" + data[index].oracle_id + ".jpg"
-		// 	fetchCardImage(cardName, index)
-		// }
-
 		if (index < downloadQueue.length) {
-
+			let multiverse_ids = data[index].multiverse_ids.length
 			cardName = "./cimg/" + data[downloadQueue[index]].oracle_id + ".jpg"
-			fetchCardImage(cardName, downloadQueue[index])
+			if (multiverse_ids == 1) {
+				downloadOneSide(cardName, downloadQueue[index])
+			} else if (multiverse_ids == 2) {
+				downloadTwoSide(cardName, downloadQueue[index])
+			} else {
+				console.log("MORE THAN TWO SIDED CARD SPOTTED AT " + index + " WITH " + multiverse_ids.length +" MULTIVERSE IDS ")
+			}
 			index++;
+			
 		} else {
 			clearInterval(interval); // Stop after all cards have been downloaded
 			alert('Download Complete!');
 		}
-	}, 1000); // 1000 ms = 1 second
+	}, 450); // 1000 ms = 1 second
 }
 
 // if (index =< downloadQueue.length) {
 // 	cardName = "./cimg/" + data[index].oracle_id + ".jpg"
-// 	fetchCardImage(cardName, index)
+// 	downloadOneSide(cardName, index)
 // 	index++;
 // } else {
 // 	clearInterval(interval); // Stop after all cards have been downloaded
