@@ -83,3 +83,57 @@
     transform: rotate(45deg);
 }
 /* End Checkbox Formatting */
+
+.big_card {
+	width: 450px;
+	height: 630px;
+}
+
+.details_body {
+	background-color: red;
+	margin: 50px;
+	display: flex;
+}
+
+/* .spacing {
+	width: 100%;
+	background-color: green;
+} */
+
+.details_text {
+	width: 100%;
+	text-align: right;
+	justify-self: right;
+	background-color: blue;
+	display: block;
+	padding: 10px;
+}
+
+/* card details */
+
+.card_nameline {
+	display: inline-block;
+	background-color: cyan;
+	width: 100%;
+}
+
+.card_name  {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 30px;
+	display: inline;
+}
+
+.card_mv {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	display: inline;
+}
+
+.card_typeline {
+	background-color: purple;
+}
+
+.card_oracle {
+	background-color: white;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

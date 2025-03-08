@@ -56,27 +56,84 @@ async function startDownloading() {
 
 	downloadCount = 1120
 
-	while (index1 < downloadCount) {
-		if (index1 % 100 === 0) {
-			console.log("checkpoint reached after " + index1 + " checks")
-		}
-		let multiverse_ids = data[index1].multiverse_ids.length
-		if (multiverse_ids == 0) {console.log("TOKEN SPOTTED")} 
-		else {
-			try {
-				console.log("curr index val:" + index1)
-				const response = await fetch("./cimg/" + data[index1].oracle_id + ".jpg");
-				if (response.ok) {} 
-				else {
-					downloadQueue.push(index1)
-					console.log("FOUND YOU!")
-				}
-			} catch (error){
-				console.log(error)
+	// while (index1 < downloadCount) {
+	// 	if (index1 % 100 === 0) {
+	// 		console.log("checkpoint reached after " + index1 + " checks")
+	// 	}
+	// 	let multiverse_ids = data[index1].multiverse_ids.length
+	// 	if (multiverse_ids == 0) {console.log("TOKEN SPOTTED")} 
+	// 	else {
+	// 		try {
+	// 			console.log("curr index val:" + index1)
+	// 			const response = await fetch("./cimg/" + data[index1].oracle_id + ".jpg");
+	// 			if (response.ok) {} 
+	// 			else {
+	// 				downloadQueue.push(index1)
+	// 				console.log("FOUND YOU!")
+	// 			}
+	// 		} catch (error){
+	// 			console.log(error)
+	// 		}
+	// 	}
+	// 	index1++
+	// }
+
+	async function processRequests() {
+		// let promises = [];
+		let checkpointInterval = 100;
+	  
+		while (index1 < downloadCount) {
+
+			if (index1 % checkpointInterval === 0) {
+				console.log("checkpoint reached after " + index1 + " checks");
 			}
+
+			//   check for token
+			let multiverse_ids = data[index1].multiverse_ids.length;
+			if (multiverse_ids == 0) {
+				console.log("TOKEN SPOTTED");
+			} 
+			
+			else {
+				try {
+
+				console.log("curr index val:" + index1);
+				console.log(data[index1].oracle_id)
+
+				// check if card already downloaded
+				const fetchPromise = await fetch("./cimg/" + data[index1].oracle_id + ".jpg")
+					.then((response) => {
+						if (response.ok) {} 
+						else {
+						downloadQueue.push(index1);
+						console.log("FOUND YOU!");
+						}
+					})
+					.catch((error) => {
+						console.log(error);
+					});
+				
+				// promises.push(fetchPromise);
+				// this feels like to much error catching but ok thanks chatgpt
+				} catch (error) {
+					console.log(error);
+				}
+			}
+		  
+		  index1++;
+	  
+		// Process requests in batches for better control (optional)
+		//   if (promises.length >= checkpointInterval) {
+		// 	await Promise.all(promises);  // Wait for this batch to finish
+		// 	promises = [];  // Reset the promise array
+		//   }
 		}
-		index1++
-	}
+	  
+		// Wait for any remaining promises after the loop
+		// await Promise.all(promises);
+	  }
+	  
+	await processRequests();
 
 	console.log("downloadqueue made")
 
@@ -85,7 +142,10 @@ async function startDownloading() {
 
 	// return
 
-	let index = 1100;
+
+// TODO MAKE THE THINGY DOWNLOAD DOUBLESIDED CARDS LIKE 1106 CUZ THEY ARE FORMATTED DIFFERENTLY!!1!!!1!!1111!
+
+	let index = 0;
 	const interval = setInterval(() => {
 		if (index < downloadQueue.length) {
 			let multiverse_ids = data[index].multiverse_ids.length
