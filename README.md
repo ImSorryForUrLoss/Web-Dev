@@ -86,3 +86,14 @@ code for the web development class
 * Determined images for double sided cards had not been downloaded
 * Revisited downloader, modified to download card images instead of art crop images
 * Need to finish debugging downloader and then run
+
+## 2025-03-08 Saturday
+* Calum tries out the <marquee> tag then comments it out
+* Revew what was working and what was broken
+* Has a search box, which uses the Skryfall API to search and gets results
+* Throws error - isn't handling returned array and returning card images
+* Fixed error, displays card images
+* Next step is to add card text with image
+* Sidebar to revisit card image download code, resolved initial issue
+* Still need to handle double sided cards in downloader
+* Created utility to index cards.json
