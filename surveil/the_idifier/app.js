@@ -1,7 +1,7 @@
 document.getElementById('startButton').addEventListener('click', startDownloading);
 const a = document.getElementById("downloader")
 
-let downloadQueue = []
+let downloadQueue = {}
 
 async function startDownloading() {
 	// Start button becomes disabled
@@ -34,7 +34,7 @@ async function startDownloading() {
 				try {
 
 				curCardId = data[index1].oracle_id
-				downloadQueue.push(curCardId + ": " + index1)
+				downloadQueue[curCardId] = index1
 				
 				// this feels like to much error catching but ok thanks chatgpt
 				} catch (error) {
@@ -52,7 +52,7 @@ async function startDownloading() {
 
 	console.log("downloadqueue made")
 
-	console.log(downloadQueue.length)
+	console.log("len: " + downloadQueue.length)
 	console.log(downloadQueue)
 
 	// return

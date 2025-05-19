@@ -32,7 +32,7 @@ async function startFinding() {
     // url = "https://api.scryfall.com/cards/search?q=c%3Dwhite+mv%3D1"
     const dataResponse = await fetch(data)
     const dataJson = await dataResponse.json();
-    const totalCards = dataJson.total_cards
+    totalCards = dataJson.total_cards
 
     console.log(totalCards)
 
@@ -102,38 +102,54 @@ async function startFinding() {
 search_button.addEventListener('click', async function() {
     await startFinding();
 
-    let url = "./the_downloader/cards.json";
+    let url = "./the_idifier/card_ids.json";
     let response = await fetch(url);
-    let cards = await response.json();
+    let card_ids = await response.json();
 
-    addCards(cards);
+    let url2 = "./the_downloader/cards.json";
+    let response2 = await fetch(url2);
+    let cards = await response2.json();
+
+    addCards(cards, card_ids);
 });
 
 // Displaying each GUID in the container
-function addCards(cards) {
+function addCards(cards, card_ids) {
     guids.forEach(guid => {
         // Construct the image path for each GUID
         const p = "./the_downloader/cimg/" + guid + ".jpg";
         
         // Create the elements for the card
-        const card = document.createElement('div');
-        const cardName = document.createElement('div');
+        const card = document.createElement('a');
+        // const cardName = document.createElement('div');
+        // const cardCost = document.createElement('div');
+        // const cardType = document.createElement('div');
         const img = document.createElement('img');
         const div = document.createElement('div');
 
+        console.log("guid: " + guid)
+        l_id = card_ids[guid]
+
         // Get the current card data based on the GUID
-        let curCardData = cards[guid]; // Access the card data for the specific GUID
+        let curCardData = cards[l_id]; // Access the card data for the specific GUID
         console.log(curCardData)
 
         if (curCardData) {
-            // Get the card's name
-            const curCardName = curCardData["name"];
+            // get the data
+            // const curCardName = curCardData["name"];
+            // const curCardCost = curCardData["mana_cost"];
+            // const curCardType = curCardData["type_line"];
             
-            cardName.textContent = curCardName; // Set the card's name in the div
+            // set the vals
+            // cardName.textContent = curCardName; // Set the card's name in the div
+            // cardCost.textContent = curCardCost
+            // cardType.textContent = curCardType
             
             // Set the image source and class
             img.src = p;
             img.className = 'card';
+
+            card.href = "http://127.0.0.1:5500/card_details.html#" + guid
             
             // Set other content if needed
             div.textContent = guid;
@@ -141,7 +157,9 @@ function addCards(cards) {
 
             // Append everything to the DOM
             holder.appendChild(card);
-            card.appendChild(cardName);
+            // card.appendChild(cardName);
+            // card.appendChild(cardCost);
+            // card.appendChild(cardType);
             card.appendChild(img);
             list.appendChild(div);
         } else {
